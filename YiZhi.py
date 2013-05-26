@@ -6,7 +6,7 @@ import mysql.connector
 import hashlib
 import datetime
 import pytz
-from decorators import require_login
+from utils import require_login
 import os
 PROJDIR = os.path.abspath(os.path.dirname(__file__))
 
