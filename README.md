@@ -6,4 +6,4 @@ YiZhi.me
 使用了Flask框架，数据库使用MySQL
 
 
-演示地址：[点击打开](http://YiZhi.me)
+演示地址：[忆志]()
