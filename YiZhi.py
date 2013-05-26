@@ -6,7 +6,7 @@ import mysql.connector
 import hashlib
 import datetime
 import pytz
-from decorators import require_login
+from utils import require_login
 import os
 PROJDIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -71,7 +71,7 @@ def index():
         return render_template('index2.html',blogs = blogs)
     return render_template('index.html')
 
-#发现show用户公开的日记
+#发现found用户公开的日记
 @app.route('/found')
 def found():
     g.cursor.execute("""select * from yizhi_posts""")
