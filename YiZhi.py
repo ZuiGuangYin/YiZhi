@@ -71,7 +71,7 @@ def index():
         return render_template('index2.html',blogs = blogs)
     return render_template('index.html')
 
-#发现show用户公开的日记
+#发现found用户公开的日记
 @app.route('/found')
 def found():
     g.cursor.execute("""select * from yizhi_posts""")
