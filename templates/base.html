@@ -21,8 +21,8 @@
             <ul class="nav">
               <li {%block homeactive%}{%endblock%}><a href="/">首页</a></li>
               <li {%block myhomeactive%}{%endblock%}><a href="/{{ g.user['url'] }}">我的主页</a></li>
-              <li {%block showactive%}{%endblock%}><a href="/found">发现 </a></li>
-              <li {%block usersactive%}{%endblock%}><a href="/users">用户墙</a></li>
+              <li {%block foundactive%}{%endblock%}><a href="/found">发现 </a></li>
+              <li class="usersactive"><a href="/users">用户墙</a></li>
             </ul> 
           </div>
           <div class="nav-collapse pull-right">
@@ -48,7 +48,7 @@
   
 	<footer class="footer navbar-fixed-bottom">
 	  	<div class="container" style="text-align: center;">
-	  		<small>@2013</small>
+	  		<small>ZuiuangYin@2013</small>
 	  	</div>
 	</footer>
   {% block footjs %}{% endblock%}

@@ -6,7 +6,7 @@ import mysql.connector
 import hashlib
 import datetime
 import pytz
-from utils import require_login
+from decorators import require_login
 import os
 PROJDIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -71,7 +71,7 @@ def index():
         return render_template('index2.html',blogs = blogs)
     return render_template('index.html')
 
-#发现found用户公开的日记
+#发现show用户公开的日记
 @app.route('/found')
 def found():
     g.cursor.execute("""select * from yizhi_posts""")
@@ -286,8 +286,7 @@ def myhome(url):
     return render_template('myhome.html',result=result)
 
 @app.route('/diary/<url>', methods=['GET'])
-@app.route('/found/<url>', methods=['GET'])
-def showdiary(url):
+def showMydiary(url):
     # check if user has permission
     
     sql = """select * from `yizhi_posts` where `id`=%s;"""\
@@ -300,23 +299,31 @@ def showdiary(url):
         colums = ('id', 'username', 'pubtime', 'content')
         result = dict(zip(colums,result[0]))
         result['content'] = result['content'].split("\n")
-    if g.user:
-        if result['username'] == g.user['username']:
-            return render_template('showdiary.html',result=result)
-        elif g.user.private == '1':#open to all
-            return render_template('showdiary.html',result=result)
-        else:
-            return render_template('showdiary.html',result=None)
+    return render_template('showdiary.html',result=result)
+
+@app.route('/found/<url>',methods=['GET'])
+def showfounddiary(url):
+    sql = """select * from `yizhi_posts` where `id`=%s;"""\
+                    % (url)
+    g.cursor.execute(sql)
+    result = g.cursor.fetchall()
+    if result[0] == ():
+        result = None
     else:
+        colums = ('id', 'username', 'pubtime', 'content')
+        result = dict(zip(colums,result[0]))
+        result['content'] = result['content'].split("\n")
+   
         sql = """select private from `yizhi_users` where `username`='%s';"""\
                     % (result['username'])
         g.cursor.execute(sql)
-        result2 = g.cursor.fetchall()
-        if result2[0][0] == 1:
+        users = g.cursor.fetchall()
+        if users[0][0] == 1:
             return render_template('showdiary.html',result=result)
         else:
             return render_template('showdiary.html',result=None)
     return render_template('showdiary.html',result=result)
+
 
 def md5encrypt(psw):
     m = hashlib.md5()

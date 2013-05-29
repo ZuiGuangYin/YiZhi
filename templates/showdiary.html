@@ -39,14 +39,16 @@ h3{font-weight:normal;}
 {% endblock %}
 
 {% block container %}
-{% if blogs %}
+{% if result %}
 <div class="span12" style="margin:0;">
-	<h3>{{blogs.time}}</h3>
+	<h3>{{result.pubtime}}</h3>
 	<div class="content">
-		{% for c in blogs.summary %}
+		{% for c in result.content %}
 		{{c}}
 		<br>
 		{% endfor %}
+		
+		<p style="float:right;">-- {{result.username}}</p>
 	</div>
 </div>
 {% else %}
