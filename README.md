@@ -5,4 +5,9 @@ YiZhi.me
 
 使用了Flask框架，数据库使用MySQL
 
+截图
+--------
+
+####首页登录####
+![首页登录](http://www.douban.com/photos/photo/1988475478/large)
 
