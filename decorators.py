@@ -20,3 +20,4 @@ class require_role(object):
         return wrapper
 
 require_login = require_role(None)
+
