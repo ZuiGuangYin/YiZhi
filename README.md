@@ -9,5 +9,5 @@ YiZhi.me
 --------
 
 ####首页登录####
-![首页登录](http://img1.douban.com/view/photo/photo/public/1988475478.jpg)
+![首页登录](http://www.douban.com/photos/photo/1988475478/)
 
