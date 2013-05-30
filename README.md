@@ -10,13 +10,21 @@ YiZhi.me
 
 ####首页登录####
 ![首页登录](http://img3.douban.com/view/photo/photo/public/1988475478.jpg)
+
 ![用户广场](http://img3.douban.com/view/photo/photo/public/1988534241.jpg)
+
 ![发现](http://img3.douban.com/view/photo/photo/public/1988533729.jpg)
+
 ![我的主页](http://img3.douban.com/view/photo/photo/public/1988533774.jpg)
+
 ![设置](http://img3.douban.com/view/photo/photo/public/1988534330.jpg)
+
 ![个人日志页](http://img3.douban.com/view/photo/photo/public/1988533837.jpg)
+
 ![写日志](http://img3.douban.com/view/photo/photo/public/1988534044.jpg)
+
 ![查看日志](http://img3.douban.com/view/photo/photo/public/1988533627.jpg)
+
 ![私有日志](http://img3.douban.com/view/photo/photo/public/1988534012.jpg)
 
 
