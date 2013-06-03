@@ -141,7 +141,7 @@ def register():
             #all is well
             user['password'] = md5encrypt(user['password'])
             sql = """insert into `yizhi_users` (`username`,`password`,`avatar`,`regtime`,`email`,`url`,`private`) values ('%s','%s','%s','%s','%s',%d);"""\
-                        % (user['username'],user['password'],getCurrentTime(),user['avatar'],user['email'],url,user['privacy'])
+                        % (user['username'],user['password'],user['avatar'],getCurrentTime(),user['email'],url,user['privacy'])
             g.cursor.execute(sql)
             #insert first diary
             sql = """insert into `yizhi_posts` (`username`,`pubtime`,`content`) values ('%s','%s','%s');"""\
