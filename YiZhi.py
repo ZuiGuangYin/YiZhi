@@ -108,10 +108,11 @@ def register():
         repassword = request.form['repassword']
         email = request.form['email']
         checkbox = False
+        avatar = 'default.jpg'
         if 'agreeornot' in request.form:
             checkbox = request.form['agreeornot']
         privacy = int(request.form['privacy'])
-        user = dict(username = username, password = password, repassword = repassword, email = email, agreeornot = checkbox, privacy = privacy)
+        user = dict(username = username, password = password, repassword = repassword, avatar = avatar, email = email, agreeornot = checkbox, privacy = privacy)
         if username == "" or password == "" or repassword == "" or email == "":
             flash(u'请填写完整')
         elif checkbox == False:
@@ -140,7 +141,7 @@ def register():
             #all is well
             user['password'] = md5encrypt(user['password'])
             sql = """insert into `yizhi_users` (`username`,`password`,`avatar`,`regtime`,`email`,`url`,`private`) values ('%s','%s','%s','%s','%s',%d);"""\
-                        % (user['username'],user['password'],getCurrentTime(),'default.jpg',user['email'],url,user['privacy'])
+                        % (user['username'],user['password'],getCurrentTime(),user['avatar'],user['email'],url,user['privacy'])
             g.cursor.execute(sql)
             #insert first diary
             sql = """insert into `yizhi_posts` (`username`,`pubtime`,`content`) values ('%s','%s','%s');"""\
