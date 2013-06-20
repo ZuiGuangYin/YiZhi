@@ -64,7 +64,7 @@ CREATE TABLE `yizhi_users` (
   `gender` int(11) DEFAULT '1',
   `avatar` text CHARACTER SET utf8,
   `email` text CHARACTER SET utf8,
-  `url` text CHARCTER SET utf8,
+  `url` text CHARACTER SET utf8,
   `nickname` text,
   `solo` text CHARACTER SET utf8,
   `private` int(2) NOT NULL DEFAULT '1',
